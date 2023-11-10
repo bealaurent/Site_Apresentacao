@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Apresentação</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="title-container">
+			<div class="rectangle"></div>
+			<h2 class="title">Apresentação Pessoal</h2>
+		</div>
+		<div>
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a> 
+					<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"	href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sobre Mim</a> 
+					<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-mediaSocial" role="tab" aria-controls="nav-mediaSocial" aria-selected="false">Redes Sociais</a>
+				</div>
+			</nav>
+			<div id="nav-tabContent" class="tab-content">
+				<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+				<h:messages style="color: red;"/>
+					<p>Oie, esse é o meu primeiro projeto. Estou muito feliz, pois
+						estou conseguindo avançar bastante na tarefa. Vamos ver como vou
+						acrescentar as coisas!!</p>
+					<br />
+
+					<p>Deixe sua mensagem de incentivo aqui em baixo!</p>
+
+					<h:form>
+						<h:outputLabel for="nome">Nome:</h:outputLabel>
+						<h:inputText id="nome" value="#{bean.nome}" styleClass="form-control" />
+						<br />
+
+						<h:outputLabel for="texto">Texto:</h:outputLabel>
+						<h:inputTextarea rows="5" cols="75" id="texto" value="#{bean.texto}" styleClass="form-control" />
+						<br />
+						
+						<h:commandButton value="Enviar" action="#{bean.enviar}" styleClass="glow-on-hover" />
+
+						<div style="text-align: left; margin-top: 20px;">
+        					<h:outputText id="agradecimento" rendered="#{bean.mostrarAgradecimento}" value="Obrigada!" style="color: black; font-size: 20px" />
+    					</div>
+    					<h:graphicImage library="img" name="japonesa.gif" rendered="#{bean.mostrarAgradecimento}"/>
+					</h:form>
+
+				</div>
+
+				<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+					<p>Sou Beathriz, uma jovem de 22 anos apaixonada por
+						tecnologia, estou atualmente cursando Sistemas de Informação com
+						entusiasmo e determinação. Sou fascinada por resolver problemas
+						complexos e criar soluções inovadoras a levou a mergulhar de
+						cabeça no mundo do desenvolvimento web. Como parte desse
+						empreendimento, estou mergulhando no estudo dedicado de linguagens
+						essenciais, como HTML e CSS, enquanto me esforço para construir
+						minhas habilidades de programação.</p>
+
+					<p>Com uma mente curiosa e uma sede insaciável por aprendizado,
+						eu encaro cada novo desafio como uma oportunidade de crescimento
+						pessoal e profissional. Estou determinada a tornar-me uma
+						especialista em desenvolvimento web, trazendo criatividade e
+						paixão para cada projeto em que me envolvo. Apesar de ser o
+						primeiro projeto, a abordagem meticulosa e dedicação inabalável me
+						impulsionam a buscar a excelência em tudo o que faço.</p>
+
+					<p>Fora dos livros e códigos, sou uma entusiasta da música e
+						adora passar seu tempo livre tocando violão e explorando novos
+						estilos musicais. Sou também uma apreciadora ávida de arte,
+						frequentando exposições sempre que posso para mergulhar na
+						diversidade de expressões criativas. Minha busca contínua por
+						conhecimento e minha atitude apaixonada pela vida refletem-me em
+						cada aspecto da minha jornada, enquanto me esforça para deixar
+						minha marca no mundo da tecnologia e além.</p>
+				</div>
+				<div class="tab-pane fade" id="nav-mediaSocial" role="tabpanel"
+					aria-labelledby="nav-mediaSocial-tab">
+					<p>Essas são as minhas redes sociais!</p>
+					<a href="https://www.instagram.com/_bealaurent/" target="_blank">
+						<button class="glow-on-hover" type="button">Instagram</button>
+					</a> <a href="https://twitter.com/_bealaurent" target="_blank">
+						<button class="glow-on-hover" type="button">Twitter</button>
+					</a> <a href="https://www.twitch.tv/bealaurent" target="_blank">
+						<button class="glow-on-hover" type="button">Twitch</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" />
+	<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" />
+</h:body>
+</html>
+
